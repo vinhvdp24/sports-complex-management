@@ -1,0 +1,7 @@
+/vendor/
+/.vscode/
+.env
+/temp_docx/
+/*.docx
+/*.zip
+*.log

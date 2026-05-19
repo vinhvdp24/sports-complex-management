@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Thiết lập thư mục gốc của dự án là /QuanLySanBong/
+  RewriteBase /QuanLySVD/
+
+  # Điều kiện: Nếu đường dẫn yêu cầu không phải là một file đã tồn tại...
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # ...và cũng không phải là một thư mục đã tồn tại...
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # ...thì chuyển hướng yêu cầu đến index.php, đồng thời
+  # tạo một biến $_GET['url'] chứa đường dẫn người dùng yêu cầu.
+  # Đây là cách mà Router của ứng dụng này được thiết kế để hoạt động.
+  RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+</IfModule>

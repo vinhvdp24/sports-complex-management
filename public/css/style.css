@@ -1,0 +1,118 @@
+#hero-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/bg.jpg') center / cover no-repeat;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+/* New Hero Button Style */
+.btn-hero {
+    padding: 15px 40px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    background-image: linear-gradient(to right, #28a745, #218838);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block; /* Ensures proper rendering as a button */
+}
+
+.btn-hero:hover {
+    color: #fff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(to right, #218838, #28a745);
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; }
+
+#wrapper {
+    flex-grow: 1;
+    display: flex; 
+    flex-direction: column;
+}
+
+
+
+footer {
+    flex-shrink: 0; 
+  
+    margin-top: 0 !important; 
+}
+
+/* Store Product Card Styles */
+.product-card {
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px; /* Fixed height for all images */
+    object-fit: contain; /* Use 'contain' to fit the whole image without cropping */
+    padding: 10px;
+}
+
+/* Category Sidebar Styles */
+.list-group {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: .5rem;
+}
+
+.list-group-item.active {
+    background-color: #0d6efd; /* Bootstrap primary color */
+    border-color: #0d6efd;
+}
+
+.list-group-item:not(.active) {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.list-group-item:not(.active):hover {
+    background-color: #f8f9fa; /* Light grey hover */
+}
+
+/* Feature Item Separators */
+@media (max-width: 767.98px) {
+    .feature-item:not(:last-child) {
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 1.5rem;
+    }
+    /* The default margin-bottom from .mb-4 is enough, so we don't need to add more */
+}
+
+@media (min-width: 768px) {
+    .feature-item {
+        position: relative;
+    }
+    .feature-item:not(:last-child)::after {
+        content: '|';
+        position: absolute;
+        right: -15px; /* Adjust position to be between columns */
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2.5rem;
+        color: #e9ecef;
+        font-weight: 100;
+    }
+}
